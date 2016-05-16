@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+        <table>
+          <th>
+              id
+          </th>
+            <th>
+                name
+            </th>
+            <th>
+                type
+            </th>
+            <th>
+                gender
+            </th>
+            <th>
+              action
+            </th>
+            <tr>
+
+            {{#each result}}
+            <td>
+                {{_id}}
+            </td>
+            <td>
+                {{name}}
+            </td>
+            <td>
+                {{type}}
+            </td>
+            <td>
+                {{gender}}
+            </td>
+            <td>
+            <a href="/edit/{{_id}}"><button type="button" name="button">Edit</button></a>
+            <a href="/delete/{{_id}}"><button type="button" name="button">Delete</button></a>
+            </td>
+          </tr>
+            {{/each}}
+        </table>
+
+</body>
+
+</html>
