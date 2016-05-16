@@ -21,7 +21,9 @@ app.get('/', function(req, res, next){
 	res.render('index');
 })
 app.post('/add',data.add);
-
+app.get('/data',data.show);
+app.get('/edit/:id',data.edit);
+app.post('/update/:id',data.update);
 
 app.all('*',function(req, res){
 
