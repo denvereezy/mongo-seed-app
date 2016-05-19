@@ -5,7 +5,8 @@ var exhbs  = require('express-handlebars'),
     MongoClient = require('mongodb').MongoClient,
     session = require('express-session'),
     cookieParser = require('cookie-parser'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    multer = require('multer');
 
 var url = 'mongodb://localhost:27017/denver';
 var data = require('./routes/data');
@@ -20,7 +21,7 @@ app.set('view engine', 'handlebars');
 app.get('/', function(req, res, next){
 	res.render('index');
 })
-app.post('/add',data.add);
+app.post('/add',multer({ dest: './public/uploads/'}).single('image'), data.add);
 app.get('/data',data.show);
 app.get('/edit/:id',data.edit);
 app.post('/update/:id',data.update);
