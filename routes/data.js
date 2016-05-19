@@ -9,7 +9,8 @@ exports.add = function(req, res, next) {
             collection.insert({
                     name: req.body.name,
                     type: req.body.type,
-                    gender: req.body.gender
+                    gender: req.body.gender,
+                    url : req.file.path.replace('public/', '')
                 })
                 .then(function(result) {
                     db.close();
