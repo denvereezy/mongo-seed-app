@@ -1,51 +1,27 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title></title>
-</head>
-
-<body>
-        <table>
-          <th>
-              id
-          </th>
-            <th>
-                name
-            </th>
-            <th>
-                type
-            </th>
-            <th>
-                gender
-            </th>
-            <th>
-              action
-            </th>
-            <tr>
-
-            {{#each result}}
+<table class="table table-striped">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Gender</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    {{#each result}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{type}}</td>
+            <td>{{gender}}</td>
+            <td><img src="{{url}}" alt="" width="50px" ; height="50px" ; /></td>
             <td>
-                {{_id}}
+                <a href="/edit/{{_id}}">
+                    <button class="btn btn-primary" type="button" name="button">Edit</button>
+                </a>
+                <a href="/delete/{{_id}}">
+                    <button class="btn btn-danger" type="button" name="button">Delete</button>
+                </a>
             </td>
-            <td>
-                {{name}}
-            </td>
-            <td>
-                {{type}}
-            </td>
-            <td>
-                {{gender}}
-            </td>
-            <td>
-            <a href="/edit/{{_id}}"><button type="button" name="button">Edit</button></a>
-            <a href="/delete/{{_id}}"><button type="button" name="button">Delete</button></a>
-            </td>
-          </tr>
-            {{/each}}
-        </table>
-
-</body>
-
-</html>
+        </tr>
+    {{/each}}
+</table>
