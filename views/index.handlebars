@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <form action="/add" method="post">
-      name
-      <input type="text" name="name">
-      type
-      <input type="text" name="type">
-      gender
-      <input type="text" name="gender">
-      <input type="submit">
-    </form>
-  </body>
-</html>
+<form class="col-md-8" action="/add" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <br />
+        <label>Name</label>
+        <input type="text" name="name" class="form-control">
+        <br />
+        <label>Type</label>
+        <input type="text" name="type" class="form-control">
+        <br />
+        <label>Gender</label>
+        <input type="text" name="gender" class="form-control">
+        <br />
+        <label>Image</label>
+        <input id='img' type="file" name="image" class="form-control">
+        <br />
+        <input class="btn btn-success pull-right" type="submit" value="Add">
+    </div>
+</form>
