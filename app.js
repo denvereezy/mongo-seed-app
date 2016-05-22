@@ -18,11 +18,11 @@ app.engine('handlebars', exhbs({defaultLayout : 'main'}));
 app.set('view engine', 'handlebars');
 
 
-app.get('/', function(req, res, next){
+app.get('/add', function(req, res, next){
 	res.render('index');
 })
 app.post('/add',multer({ dest: './public/uploads/'}).single('image'), data.add);
-app.get('/data',data.show);
+app.get('/',data.show);
 app.get('/edit/:id',data.edit);
 app.post('/update/:id',data.update);
 app.get('/delete/:id',data.delete);
