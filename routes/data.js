@@ -73,7 +73,7 @@ exports.update = function(req, res, next) {
                     }
                 })
                 .then(function(result) {
-                    res.redirect('/data');
+                    res.redirect('/');
                     db.close();
                 })
         })
@@ -99,7 +99,7 @@ exports.delete = function(req, res, next) {
                 })
                 .then(function(result) {
                     db.close();
-                    res.redirect('/data');
+                    res.redirect('/');
                 });
 
         })
